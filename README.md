@@ -1,2 +1,2 @@
 # Proiect-sincretic
-### Tema proiect 23
+## Tema proiect 23
