@@ -1,2 +1,2 @@
 # Proiect-sincretic
-Tema proiect
+### Tema proiect 
