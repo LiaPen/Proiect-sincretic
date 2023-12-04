@@ -1,5 +1,5 @@
 # Proiect-sincretic
-## Temă proiect 23
+## Temă proiect nr. 23
 
 
 Cerința temei de proiect este următoarea:
