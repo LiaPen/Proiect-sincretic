@@ -19,7 +19,8 @@ Aceasta este o problemă bine-cunoscută în teoria combinatorică și este rezo
 2. Structura codului 
 
 - Biblioteci
-`#include <stdio.h>
-#include <stdbool.h>
-`
+
+`#include <stdio.h>`
+`#include <stdbool.h>`
+
 Proiectul include bibliotecile standard pentru intrare/ieșire și pentru lucrul cu valori logice (adevărat/fals).
