@@ -24,3 +24,17 @@ Aceasta este o problemă bine-cunoscută în teoria combinatorică și este rezo
 `#include <stdbool.h>`
 
 Proiectul include bibliotecile standard pentru intrare/ieșire și pentru lucrul cu valori logice (adevărat/fals).
+
+- Macrodefiniții
+
+`#define N 8 // Dimensiunea tablei de șah`
+
+Macrodefiniția *N* reprezintă dimensiunea tablei de șah și este setată la valoarea 8, corespunzătoare șahului standard de (8x8).
+
+- Variabile Globale
+
+`int tabla[N][N];`
+
+Matricea tabla reprezintă tabla de șah și este folosită pentru a urmări poziționarea turnurilor.
+
+- Funcții 
