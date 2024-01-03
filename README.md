@@ -38,3 +38,52 @@ Macrodefiniția *N* reprezintă dimensiunea tablei de șah și este setată la v
 Matricea tabla reprezintă tabla de șah și este folosită pentru a urmări poziționarea turnurilor.
 
 - Funcții 
+
+`bool mutare_valida(int row, int col);`
+
+Această funcție verifică dacă o mutare (plasarea unui turn într-o anumită poziție) este validă. Se verifică dacă există deja un turn pe acel rând sau coloană.
+
+`bool rezolva(int col);`
+
+Funcția principală pentru rezolvarea problemei utilizând backtracking. Aceasta încearcă să plaseze turnurile unul câte unul pe coloane, verificând validitatea fiecărei mutări și revenind în cazul în care nu se găsește o soluție validă.
+
+`void afiseaza_tabla();`
+
+Funcție care afișează tabla de șah în consolă.
+
+3. Funcționalitate 
+ 
+- Inițializare
+
+```
+{
+    // Inițializează tabla de șah cu 0
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        tabla[i][j] = 0;
+    }
+}
+}
+```
+
+Tabla de șah este inițializată cu 0 la începutul programului.
+
+- Rezolvare și Afișare
+
+```
+{
+    if (rezolva(0)) {
+    printf("Solutia gasita:\n");
+    afiseaza_tabla();
+}
+else {
+    printf("Nu exista o solutie.\n");
+}
+}
+```
+
+Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rezultat, se afișează tabla de șah sau un mesaj că nu există o soluție.
+
+4. Concluzie
+
+Proiectul oferă o implementare eficientă pentru rezolvarea **Problemei Celor 8 Turnuri** utilizând algoritmul de backtracking. Este o soluție elegantă și ușor de înțeles pentru o problemă clasică în teoria problemei și este utilă pentru înțelegerea principiilor de bază ale algoritmilor de backtracking.
