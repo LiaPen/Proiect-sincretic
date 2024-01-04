@@ -56,14 +56,12 @@ Funcție care afișează tabla de șah în consolă.
 - Inițializare
 
 ```
-
     // Inițializează tabla de șah cu 0
 for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
         tabla[i][j] = 0;
     }
 }
-
 ```
 
 Tabla de șah este inițializată cu 0 la începutul programului.
@@ -71,7 +69,6 @@ Tabla de șah este inițializată cu 0 la începutul programului.
 - Rezolvare și Afișare
 
 ```
-
     if (rezolva(0)) {
     printf("Solutia gasita:\n");
     afiseaza_tabla();
@@ -79,7 +76,6 @@ Tabla de șah este inițializată cu 0 la începutul programului.
 else {
     printf("Nu exista o solutie.\n");
 }
-
 ```
 
 Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rezultat, se afișează tabla de șah sau un mesaj că nu există o soluție.
