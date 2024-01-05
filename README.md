@@ -11,7 +11,7 @@ Cerința temei de proiect este următoarea:
 Scopul programului este de a verifica atunci când opt turnuri așezate pe tabla de șah, nu se atacă reciproc. 
 În șah, turnurile pot să se deplaseze pe tablă orizontal sau vertical pe toată lungimea tablei. 
 Implementarea este realizată în limbajul de programare C și utilizează un algoritm de backtracking pentru a găsi soluția.
-Mediul de dezvoltare utilizat pentru a scrie codul este *Visual Studio Code*. Toate aplicațiile utilizate în realizarea proiectului sunt: Visual Studio Code, GiHub, GitHub Desktop, Docker Desktop, Docker Hub, Command Prompt din Windows.
+Mediul de dezvoltare utilizat pentru a scrie codul este *Visual Studio Code*. Toate aplicațiile utilizate în realizarea proiectului sunt: Visual Studio Code, GitHub, GitHub Desktop, Docker Desktop, Docker Hub, Command Prompt din Windows.
 Există *92* de moduri unice de a plasa opt turnuri pe tabla de șah (8x8) astfel încât să nu se atace reciproc. 
 Este important de menționat că acest număr include toate permutările distincte și rotirile pentru fiecare configurație. 
 Acest rezultat este cunoscut sub numele de ,,Soluțiile celor opt regine" și a fost demonstrat pentru prima dată de către matematicianul Carl Friedrich Gauss. 
