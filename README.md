@@ -81,6 +81,12 @@ else {
 
 Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rezultat, se afișează tabla de șah sau un mesaj că nu există o soluție.
 
-4. Concluzie
+4. Exemplu afișare
+
+O soluție din cele 92 de soluții posibile este reprezentată în imaginea de mai jos:
+
+![alt text](design.png)
+
+5. Concluzie
 
 Proiectul oferă o implementare eficientă pentru rezolvarea **Problemei Celor 8 Turnuri** utilizând algoritmul de backtracking. Este o soluție elegantă și ușor de înțeles pentru o problemă clasică în teoria problemei și este utilă pentru înțelegerea principiilor de bază ale algoritmilor de backtracking.
