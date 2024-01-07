@@ -85,8 +85,13 @@ Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rez
 
 O soluție din cele 92 de soluții posibile este reprezentată în imaginea de mai jos:
 
-![nu se afiseaza imaginea](img.jpg)
+![Tabla de șah](img.jpg)
 
-5. Concluzie
+5. Bibliografie
+
+Ca și resurse am folosit materialele primite de la domnul profesor Bocan Valer, acestea fiind cele postate pe *Campusul Virtual*: „Prezentare sistem de containere Docker” și „Rularea unui program C++ în container Docker”.
+Am utilizat site-ul *Canva*([link](https://www.canva.com/)) pentru realizarea imaginii exemplu. 
+
+6. Concluzie
 
 Proiectul oferă o implementare eficientă pentru rezolvarea **Problemei Celor 8 Turnuri** utilizând algoritmul de backtracking. Este o soluție elegantă și ușor de înțeles pentru o problemă clasică în teoria problemei și este utilă pentru înțelegerea principiilor de bază ale algoritmilor de backtracking.
