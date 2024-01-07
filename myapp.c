@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <microhttpd.h>
 
-#define N 8
+#define N 8 //Dimensiunea tablei de șah
 
 int tabla[N][N];
 
@@ -48,13 +48,54 @@ bool rezolva(int col) {
     return false;
 }
 
-void afiseaza_tabla() {
+void afiseaza_tabla(FILE *file) {
+    fprintf(file, "<html><body><h2>Solutia gasita:</h2><table border=\"1\">");
+
+    for (int i = 0; i < N; i++) {
+        fprintf(file, "<tr>");
+        for (int j = 0; j < N; j++) {
+            fprintf(file, "<td>%d</td>", tabla[i][j]);
+        }
+        fprintf(file, "</tr>");
+    }
+
+    fprintf(file, "</table></body></html>");
+}
+
+static int handle_request(
+    void *cls,
+    struct MHD_Connection *connection,
+    const char *url,
+    const char *method,
+    const char *version,
+    const char *upload_data,
+    size_t *upload_data_size,
+    void **con_cls)
+{
+    FILE *file = tmpfile();
+    if (!file) {
+        return MHD_NO;
+    }
+
+    // Rezolvă problema celor 8 turnuri
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            printf("%2d ", tabla[i][j]);
+            tabla[i][j] = 0;
         }
-        printf("\n");
     }
+
+    if (rezolva(0)) {
+        afiseaza_tabla(file);
+    } else {
+        fprintf(file, "<html><body><p>Nu exista o solutie.</p></body></html>");
+    }
+
+    fseek(file, 0, SEEK_SET);
+    struct MHD_Response *response = MHD_create_response_from_fd(0, fileno(file));
+    int ret = MHD_queue_response(connection, MHD_HTTP_OK, response);
+    MHD_destroy_response(response);
+    fclose(file);
+    return ret;
 }
 
 // Funcție de gestionare a cererilor HTTP
@@ -74,34 +115,23 @@ int handle_request(void *cls, struct MHD_Connection *connection, const char *url
 }
 
 int main() {
-    // Inițializați tabla de șah cu 0
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            tabla[i][j] = 0;
-        }
-    }
-
-    if (rezolva(0)) {
-        printf("Solutia gasita:\n");
-        afiseaza_tabla();
-    } else {
-        printf("Nu exista o solutie.\n");
-    }
-
-    // Configurați serverul HTTP
-    struct MHD_Daemon *daemon = MHD_start_daemon(MHD_USE_SELECT_INTERNALLY, 8080, NULL, NULL,
-                                                 &handle_request, NULL, MHD_OPTION_END);
+    struct MHD_Daemon *daemon;
+    daemon = MHD_start_daemon(
+        MHD_USE_SELECT_INTERNALLY,
+        8080,
+        NULL,
+        NULL,
+        &handle_request,
+        NULL,
+        MHD_OPTION_END);
 
     if (!daemon) {
-        fprintf(stderr, "Eroare la pornirea serverului HTTP.\n");
         return 1;
     }
 
-    printf("Serverul HTTP rulează pe portul 8080. Apasati Enter pentru a opri serverul.\n");
-    getchar();
+    printf("Serverul ruleaza pe portul 8080...\n");
+    getchar(); // Așteaptă o apăsare de tastă pentru a închide serverul
 
-    // Opriți serverul HTTP
     MHD_stop_daemon(daemon);
-
     return 0;
 }
