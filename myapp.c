@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include<string.h>
+#include <string.h>
 #include <microhttpd.h>
 
 #define N 8 // Dimensiunea tablei de șah
@@ -8,6 +8,45 @@
 int tabla[N][N];
 
 // Funcție pentru rezolvarea problemei celor 8 turnuri
+bool rezolva(int col);
+
+// Verifică dacă o mutare este validă
+bool mutare_valida(int row, int col);
+
+// Funcție pentru afișarea tablei de șah
+void afiseaza_tabla();
+
+// Funcție de gestionare a cererilor HTTP
+int handle_request(void *cls, struct MHD_Connection *connection, const char *url,
+                   const char *method, const char *version, const char *upload_data,
+                   size_t *upload_data_size, void **con_cls);
+
+int main() {
+    // Inițializează tabla de șah cu 0
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            tabla[i][j] = 0;
+        }
+    }
+
+    // Configurați serverul HTTP
+    struct MHD_Daemon *daemon = MHD_start_daemon(MHD_USE_SELECT_INTERNALLY, 8080, NULL, NULL,
+                                                 &handle_request, NULL, MHD_OPTION_END);
+
+    if (!daemon) {
+        fprintf(stderr, "Eroare la pornirea serverului HTTP.\n");
+        return 1;
+    }
+
+    printf("Serverul HTTP rulează pe portul 8080. Deschideți http://localhost:8080 în browser pentru a vedea tabla de șah.\n");
+    getchar();
+
+    // Opriți serverul HTTP
+    MHD_stop_daemon(daemon);
+
+    return 0;
+}
+
 bool rezolva(int col) {
     if (col >= N) {
         return true; // Toate turnurile au fost plasate cu succes
@@ -31,7 +70,6 @@ bool rezolva(int col) {
     return false; // Nu există o soluție validă
 }
 
-// Verifică dacă o mutare este validă
 bool mutare_valida(int row, int col) {
     // Verifică rândul și coloana
     for (int i = 0; i < col; i++) {
@@ -57,7 +95,6 @@ bool mutare_valida(int row, int col) {
     return true;
 }
 
-// Funcție pentru afișarea tablei de șah
 void afiseaza_tabla() {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -67,7 +104,6 @@ void afiseaza_tabla() {
     }
 }
 
-// Funcție de gestionare a cererilor HTTP
 int handle_request(void *cls, struct MHD_Connection *connection, const char *url,
                    const char *method, const char *version, const char *upload_data,
                    size_t *upload_data_size, void **con_cls) {
@@ -97,30 +133,4 @@ int handle_request(void *cls, struct MHD_Connection *connection, const char *url
     MHD_destroy_response(response);
 
     return ret;
-}
-
-int main() {
-    // Inițializează tabla de șah cu 0
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            tabla[i][j] = 0;
-        }
-    }
-
-    // Configurați serverul HTTP
-    struct MHD_Daemon *daemon = MHD_start_daemon(MHD_USE_SELECT_INTERNALLY, 8080, NULL, NULL,
-                                                 &handle_request, NULL, MHD_OPTION_END);
-
-    if (!daemon) {
-        fprintf(stderr, "Eroare la pornirea serverului HTTP.\n");
-        return 1;
-    }
-
-    printf("Serverul HTTP rulează pe portul 8080. Deschideți http://localhost:8080 în browser pentru a vedea tabla de șah.\n");
-    getchar();
-
-    // Opriți serverul HTTP
-    MHD_stop_daemon(daemon);
-
-    return 0;
 }
