@@ -34,7 +34,7 @@ int main() {
                                                  &handle_request, NULL, MHD_OPTION_END);
 
     if (!daemon) {
-        fprintf(stderr, "Eroare la pornirea serverului HTTP.\n");
+        fprintf(stderr, "Eroare la pornirea serverului HTTP pe portul 8080.\n");
         return 1;
     }
 
