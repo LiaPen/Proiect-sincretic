@@ -85,7 +85,7 @@ Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rez
 
 O soluție din cele 92 de soluții posibile este reprezentată în imaginea de mai jos:
 
-![nu se afiseaza imaginea](design.jpg)
+![nu se afiseaza imaginea](img.jpg)
 
 5. Concluzie
 
