@@ -85,10 +85,8 @@ Se apelează funcția rezolva pentru a găsi o soluție, iar în funcție de rez
 
 O soluție din cele 92 de soluții posibile este reprezentată în imaginea de mai jos:
 
-![nu se afiseaza imaginea][def]
+![nu se afiseaza imaginea][C:\Users\iulia\Documents\GitHub\Proiect-sincretic/design.jpg]
 
 5. Concluzie
 
 Proiectul oferă o implementare eficientă pentru rezolvarea **Problemei Celor 8 Turnuri** utilizând algoritmul de backtracking. Este o soluție elegantă și ușor de înțeles pentru o problemă clasică în teoria problemei și este utilă pentru înțelegerea principiilor de bază ale algoritmilor de backtracking.
-
-[def]: design.jpg
