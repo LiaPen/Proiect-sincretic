@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include<string.h>
 #include <microhttpd.h>
 
 #define N 8 // Dimensiunea tablei de șah
