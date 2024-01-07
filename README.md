@@ -91,6 +91,7 @@ O soluție din cele 92 de soluții posibile este reprezentată în imaginea de m
 
 Ca și resurse am folosit materialele primite de la domnul profesor Bocan Valer, acestea fiind cele postate pe *Campusul Virtual*: „Prezentare sistem de containere Docker” și „Rularea unui program C++ în container Docker”.
 Am utilizat site-ul *Canva*([link](https://www.canva.com/)) pentru realizarea imaginii exemplu. 
+Cartea *Limbajul C*(Kernighan, Brian W. ; Ritchie, Dennis M. ; Uţescu, Ionuţ(trad. ), Teora, 2003) pentru suport în scrierea codului.
 
 6. Concluzie
 
