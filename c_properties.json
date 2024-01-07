@@ -1,0 +1,26 @@
+{
+    "configurations": [
+      {
+        "name": "Win32",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "E:/Facultate/Anul II/Semestrul I/MAP/HTTP/libmicrohttpd-0.9.77-w32-bin/x86/MinGW/shared/mingw32/include"  
+        ],
+        "defines": [],
+        "compilerpath":"E:/Facultate/Anul II/Semestrul I/MAP/HTTP/libmicrohttpd-0.9.77-w32-bin/x86/MinGW/shared-xp/mingw32/bin/libmicrohttpd-12.dll",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "msvc-x64",
+        "browse": {
+          "path": [
+            "${workspaceFolder}/**",
+            "E:/Facultate/Anul II/Semestrul I/MAP/HTTP/libmicrohttpd-0.9.77-w32-bin/x86/MinGW/shared/mingw32/include"  
+          ],
+          "limitSymbolsToIncludedHeaders": true,
+          "databaseFilename": ""
+        }
+      }
+    ],
+    "version": 4
+  }
+  
