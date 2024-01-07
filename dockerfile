@@ -8,6 +8,6 @@ COPY myapp.c .
 
 RUN gcc -o myapp myapp.c -lmicrohttpd
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["./myapp"]
