@@ -1,12 +1,10 @@
 FROM gcc:latest
 
-RUN apt-get update && apt-get install -y libmicrohttpd-dev
-
 WORKDIR /usr/src/myapp
 
 COPY myapp.c .
 
-RUN gcc -o myapp myapp.c -lmicrohttpd
+RUN gcc -o myapp myapp.c
 
 EXPOSE 80
 
