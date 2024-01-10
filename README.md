@@ -1,6 +1,11 @@
 # Proiect-sincretic
 ## Temă proiect nr. 23
 
+*Pentek Iulia 
+*Anul II(licență)
+*Facultatea de Automatică și Calculatoare
+*specializarea Informatică
+
 
 Cerința temei de proiect este următoarea:
 
