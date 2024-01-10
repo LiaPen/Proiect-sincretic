@@ -93,12 +93,18 @@ O soluție din cele 92 de soluții posibile este reprezentată în imaginea de m
 
 ![Tabla de șah](img.jpg)
 
-5. Bibliografie
+5. Livrabil
+
+- docker pull lia403/proiect-sincretic  
+- sau [https://hub.docker.com/r/lia403/proiect-sincretic](https://hub.docker.com/r/lia403/proiect-sincretic)
+- docker run --rm --name my-running-app lia403/proiect-sincretic
+
+6. Bibliografie
 
 Ca și resurse am folosit materialele primite de la domnul profesor Bocan Valer, acestea fiind cele postate pe *Campusul Virtual*: „Prezentare sistem de containere Docker” și „Rularea unui program C++ în container Docker”.
 Am utilizat site-ul *Canva*([link](https://www.canva.com/)) pentru realizarea imaginii exemplu. 
 Cartea *Limbajul C*(Kernighan, Brian W. ; Ritchie, Dennis M. ; Uţescu, Ionuţ(trad. ), Teora, 2003) pentru suport în scrierea codului.
 
-6. Concluzie
+7. Concluzie
 
 Proiectul oferă o implementare eficientă pentru rezolvarea **Problemei Celor 8 Turnuri** utilizând algoritmul de backtracking. Este o soluție elegantă și ușor de înțeles pentru o problemă clasică în teoria problemei și este utilă pentru înțelegerea principiilor de bază ale algoritmilor de backtracking.
