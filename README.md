@@ -6,8 +6,7 @@
 ##### Facultatea de Automatică și Calculatoare
 ##### specializarea Informatică
 
-
-
+---
 
 Cerința temei de proiect este următoarea:
 
